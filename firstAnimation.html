@@ -3,13 +3,39 @@
 <head>
 	<title></title>
 	<style type="text/css">
+
+		#myContainer {
+  			background:#777;
+		}
+
+	#myContainer {
+    width:300px;
+    height:400px;
+    background:gray;
+    margin:50px auto;
+    -webkit-animation:bgChange 2s 2s alternate infinite;
+    transition: all 2s ease;
+}
+
+	@-webkit-keyframes bgChange {
+    0% {
+       background:#24b4de; 
+    }
+    
+    50% {
+      background:#17a928;
+    }
+    
+    100% {
+        background:#399cb9;
+    }
+}
 		#myContainer{
 			width: 400px;
 			height: 400px;
 			position: relative;
 			background:orange;
 		}
-
 		#myAnimation{
 			width: 50px;
 			height: 50px;
@@ -17,7 +43,6 @@
 			background-color: blue;
 			border-radius: 50% 50%;
 		}
-
 		#myAnimation2{
 			width: 50px;
 			height: 50px;
@@ -26,11 +51,9 @@
 			border-radius: 50% 50%;
 			top:0;right:0;
 		}
-
 		button{border:none;
 			background-color: red;
 			}
-
 			 ul li{
             display:inline;
             list-style: none;
@@ -88,13 +111,10 @@
 </body>
 
 <script type="text/javascript">
-
 	window.onload=function(){
 		var pos=0; moveDown();
-
 		function moveDown(){
 		
-
 		var elem=document.getElementById("myAnimation");
 		var elem2=document.getElementById("myAnimation2");
 		elem.style.background="blue";
@@ -109,7 +129,6 @@
 			}else 
 			{
 				console.log(pos);
-
 				pos++;
 				elem.style.top=pos+"px";
 				elem.style.left=pos+"px";
@@ -120,21 +139,16 @@
 				}
 			}
 		}
-
 		
 		}
-
 		function moveUp(){
 			var elem=document.getElementById("myAnimation");
 			var elem2=document.getElementById("myAnimation2");
 		elem.style.background="red";
 		elem2.style.background="pink";
 		console.log(pos);
-
 		var id=setInterval(frame,1);
-
 			function frame(){
-
 			if(pos==0){
 				moveDown();
 				clearInterval(id);
